@@ -20,3 +20,19 @@ body{
   text-shadow: 0px 4px 0px #000;
   font-size: 40px;
 }
+
+#demo{
+  background: none;
+  border: none;
+  outline: none;
+  border: 1px solid rgb(25, 190, 61);
+  padding: 10px;
+  width: calc(10% - 40px);
+  color: #fff;
+  margin: 10px;
+  text-align: center;
+}
+
+#demo{
+
+}

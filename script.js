@@ -123,34 +123,70 @@ var demo = document.getElementById("demo");
         
 var counter = localStorage.getItem("counter");
 
-if(counter === 0){
-    document.getElementById("demo").value = i;
+if(counter != null){
+    demo.value = counter;
 }else{
     demo.value = counter;
 }
 
 
 function add(){
-    if(counter => 0){
-        counter++;
-        localStorage.setItem("counter", counter);
-        document.getElementById("demo").value = counter;
-    }else{
+    // if(counter => 0){
+    //     i = counter++;
+    //     localStorage.setItem("counter", i);
+    //     document.getElementById("demo").value = counter;
+    //     console.log("if")
+    // }else{
+    //     i++;
+    //     localStorage.setItem("counter", i);
+    //     document.getElementById("demo").value = i;
+    //     console.log("else")
+    // }
+    if(counter == null){
         i++;
+        demo.value = i;
         localStorage.setItem("counter", i);
-        document.getElementById("demo").value = counter;
+    }else{
+        counter++;
+        console.log(counter);
+        i = counter;
+        console.log(i);
+        localStorage.setItem("counter", i);
+        console.log(counter)
+        demo.value = counter;
+        console.log("else")
     }
 }
 
 function remove(){
-    if(counter > 0){
-        counter--;
-        localStorage.setItem("counter", counter);
-        document.getElementById("demo").value = counter;
+    // if(demo.value != 0){
+    //     if(counter > 0){
+    //         counter--;
+    //         localStorage.setItem("counter", counter);
+    //         document.getElementById("demo").value = counter;
+    //         console.log('if counter > 0');
+    //     }else{
+    //         i--;
+    //         localStorage.setItem("counter", i);
+    //         document.getElementById("demo").value = counter;
+    //         console.log("else counter > 0")
+    //     }
+    // }else{
+        
+    // }
+    if(counter == null){
+        console.log(counter);
+        console.log("if");
     }else{
-        i--;
-        localStorage.setItem("counter", i);
-        document.getElementById("demo").value = counter;
+       if(counter == 0){
+        i = 0;
+        console.log("if counter 0");
+       }else{
+        counter--;
+        demo.value = counter;
+        console.log(counter);
+        console.log("else")
+       }
     }
 }
 
