@@ -20,3 +20,56 @@ body{
   text-shadow: 0px 4px 0px #000;
   font-size: 40px;
 }
+
+#demo{
+  background: none;
+  border: none;
+  outline: none;
+  border: 1px solid rgb(25, 190, 61);
+  padding: 10px;
+  width: calc(10% - 40px);
+  color: #fff;
+  margin: 10px;
+  text-align: center;
+}
+
+.square{
+  /* border: 0px solid rgb(255, 255, 255); */
+  box-shadow: -2px 1px 0px #fff;
+  border-radius: 500px;
+  width: 200px;
+  height: 200px;
+  animation: animation 2s infinite ease-out;
+  position: absolute;
+  top: 10%;
+}
+.square.active{
+  box-shadow: -2px 1px 0px #000;
+}
+
+/* .square .circles{
+  position: absolute;
+  background: rgb(114, 79, 79);
+  width: 20px;
+  height: 20px;
+  border-radius: 40px;
+  box-shadow: -5px 5px 0px rgba(255,255,255, 1);
+}
+
+.square .circles:nth-child(1){
+  top: 50%;
+}
+.square .circles:nth-child(2){
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.square .circles:nth-child(3){
+  right: 0;
+  top: 50%;
+} */
+
+@keyframes animation {
+  100%{
+    transform: rotate(360deg);
+  }
+}
