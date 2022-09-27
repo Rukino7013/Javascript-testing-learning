@@ -90,6 +90,8 @@ const disableDarkMode = () => {
     localStorage.setItem("darkMode" , null);
 }
 
+var circle = document.getElementById("circle");
+
 if(darkmode === "enabled"){
     enableDarkMode();
 }else{
@@ -97,6 +99,7 @@ if(darkmode === "enabled"){
 }
 
 function clickMe(){
+    circle.classList.toggle("active");
     darkmode = localStorage.getItem("darkMode");
     if(darkmode !== "enabled"){
         enableDarkMode();
@@ -107,86 +110,58 @@ function clickMe(){
     }
 }
 
-// if(counter){
-    //     // text. = counter;
-    // }
-    
-    // function add(){
-        //     counter++;
-        //     text.innerHTML = counter;
-        //     localStorage.setItem('counter', counter);
-        //     // text.innerHTML += 1;
-        // }
         
 let i = 0;
 var demo = document.getElementById("demo");
         
 var counter = localStorage.getItem("counter");
 
-if(counter != null){
-    demo.value = counter;
-}else{
-    demo.value = counter;
+window.onload = () =>{
+    demo.focus();
 }
 
+document.onreadystatechange = () => {
+    if (document.readyState === "interactive") {
+        if(counter != null){
+            demo.value = counter;
+        }else{
+            demo.value = i;
+        }
+        demo.addEventListener("focus", () => {
+            demo.focus;
+        })
+    }
+  }
 
 function add(){
-    // if(counter => 0){
-    //     i = counter++;
-    //     localStorage.setItem("counter", i);
-    //     document.getElementById("demo").value = counter;
-    //     console.log("if")
-    // }else{
-    //     i++;
-    //     localStorage.setItem("counter", i);
-    //     document.getElementById("demo").value = i;
-    //     console.log("else")
-    // }
     if(counter == null){
         i++;
         demo.value = i;
         localStorage.setItem("counter", i);
     }else{
         counter++;
-        console.log(counter);
         i = counter;
-        console.log(i);
         localStorage.setItem("counter", i);
-        console.log(counter)
         demo.value = counter;
-        console.log("else")
     }
 }
 
 function remove(){
-    // if(demo.value != 0){
-    //     if(counter > 0){
-    //         counter--;
-    //         localStorage.setItem("counter", counter);
-    //         document.getElementById("demo").value = counter;
-    //         console.log('if counter > 0');
-    //     }else{
-    //         i--;
-    //         localStorage.setItem("counter", i);
-    //         document.getElementById("demo").value = counter;
-    //         console.log("else counter > 0")
-    //     }
-    // }else{
-        
-    // }
-    if(counter == null){
-        console.log(counter);
-        console.log("if");
-    }else{
-       if(counter == 0){
-        i = 0;
-        console.log("if counter 0");
-       }else{
+    if(counter != null && counter != 0){
+        console.log("hello");
         counter--;
+        i = counter;
+        localStorage.setItem("counter", i)
         demo.value = counter;
-        console.log(counter);
-        console.log("else")
-       }
+    }else{
+        if(i <= 0){
+            i = 0;
+            console.log(i);
+        }else{
+            i--;
+            demo.value = i;
+            console.log(i);
+        }
     }
 }
 
