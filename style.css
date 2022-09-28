@@ -10,7 +10,7 @@ body{
   align-items: center;
 }
 
-#btn{
+#btn,#btn1{
   border: 2px solid white;
   border-radius: 10px;
   padding: 5px 10px;
@@ -34,7 +34,6 @@ body{
 }
 
 .square{
-  /* border: 0px solid rgb(255, 255, 255); */
   box-shadow: -2px 1px 0px #fff;
   border-radius: 500px;
   width: 200px;
@@ -72,4 +71,32 @@ body{
   100%{
     transform: rotate(360deg);
   }
+}
+
+.container{
+  top: 30px;
+  left: 30px;
+  position: absolute;
+  display: flex;
+}
+
+.container #btn2{
+  width: 10px;
+  height: 30px;
+  background: #fff;
+  border: 1px solid black;
+  border-radius: 20px;
+}
+
+.container #btn2:nth-child(1){
+  height: 20px;
+  transform: translateY(10px);
+}
+.container #btn2:nth-child(3){
+  height: 25px;
+  transform: translateY(5px);
+}
+.container #btn2:nth-child(5){
+  height: 28px;
+  transform: translateY(2px);
 }

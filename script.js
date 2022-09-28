@@ -127,9 +127,6 @@ document.onreadystatechange = () => {
         }else{
             demo.value = i;
         }
-        demo.addEventListener("focus", () => {
-            demo.focus;
-        })
     }
   }
 
@@ -172,3 +169,16 @@ function clearBtn(){
     i = 0;
     document.getElementById("demo").value = i;
 }
+
+
+var square = document.querySelector("#btn2:nth-child(3)");
+var pos = 0;
+setInterval(() => {
+    square.style.height = 45 + "px";
+    square.style.transform = "translateY(" + -15 + "px" +")";
+}, 1000);
+
+setInterval(() => {
+    square.style.height = 30 + "px";
+    square.style.transform = "translateY(" + 0 + "px" +")";
+}, 2000);
